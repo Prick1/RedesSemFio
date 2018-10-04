@@ -2,11 +2,14 @@
 #define PACKAGE_H_
 
 #include <vector>
+#include <string>
 class Package{
 public:
-    std::vector<unsigned char> Data;
+    std::string Data;
     unsigned int senderID;
     unsigned int receiverID;
+    Package(std::string Data,unsigned int senderID, unsigned int receiverID)
+            : Data(Data), senderID(senderID), receiverID(receiverID){}
 };
 
 
