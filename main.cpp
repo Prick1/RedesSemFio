@@ -2,17 +2,15 @@
 #include <iostream>
 #include <string>
 
-int main(int argc, char *argv[]){
-  /*  if(argc == 4){
-        unsigned int sdHostAdr = (unsigned int) std::stoi(argv[1]);
-        unsigned int rcvHostAdr = (unsigned int) std::stoi(argv[2]);
-        unsigned int data = (unsigned int) std::stoi(argv[3]);
+int main(){
 
-        Host Sender(sdHostAdr);
-        Host Receiver(rcvHostAdr);
-        
-        Sender.send(Receiver, data);
-        std::cout << "\n" << Receiver.getLastData() << std::endl;
-
-    }*/
+    Media media;
+    Host A(media, 193, Point(2,2));
+    Host B(media, 155, Point(50,50));
+    A.sendPackage(media, 155, "Hello puto");
+    B.receivePackage(media);
+    std::string data;
+    B.getLastData(data);
+    std::cout << data << std::endl;
+    return 0;
 }

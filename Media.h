@@ -6,7 +6,9 @@
 #include <map>
 #include "Package.h"
 #include <algorithm>
+#include <iostream>
 #include "Point.h"
+#define RADIUS 30
 
 class Media{
     std::vector<Package> dataFlow;
@@ -14,7 +16,7 @@ class Media{
     std::map<unsigned int, Point> hostLocations; //Lembrar de preencher
 public:
     bool insertPackage(Package data);
-    bool getPackageByID(unsigned int hostID,std::vector<Package>& ReceiverMemory);
+    int getPackageByID(unsigned int hostID,std::vector<std::string>& ReceiverMemory);
     void insertHostOnMedia(unsigned int hostID, Point location){ hostLocations[hostID] = location; }
 };
 
